@@ -42,6 +42,10 @@ The project is organized as follows:
    cd ../backend
    npm install  # or yarn install
    ```
+   or install automatically with this command
+   ```bash
+   ./install.sh
+   ```
 
 ## Running the Application
 
@@ -60,8 +64,19 @@ The project is organized as follows:
 ## Environments
 
 - Backend
+
   ```bash
   MONGODB=( url mongodb database )
+  ```
+
+- General
+
+  ```bash
+  POSTGRES_USER=user
+  POSTGRES_PASSWORD=password
+  POSTGRES_DB=database
+
+  MONGO_INITDB_DATABASE=database_mongodb
   ```
 
 ## Version Control System - Basic Procedures (Using Git)
