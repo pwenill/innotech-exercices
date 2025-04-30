@@ -20,9 +20,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get("/", (req, res) => {
-  res.status(StatusCodes.OK).json({
-    message: "Welcome to the API",
-  });
+  res.status(StatusCodes.OK).send("Hello world")
 });
 
 mongoose
