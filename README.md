@@ -4,32 +4,100 @@
 
 This project is a full-stack application built with Next.JS, Express.JS, PostgreSQL, MongoDB. This README provides instructions on setting up the development environment, running the application, and contributing to the project.
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- [Docker & Docker Compose](https://www.docker.com/)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+
 ## Project Structure
 
 The project is organized as follows:
 
-project-root/ ├── frontend/
+1. **Frontend**
 
-# Application frontend React │ ├── src/
+- `/frontend` - Folder containing all the frontend code (Next.js)
+- `/frontend/src` - Contains all public frontend assets images ( .png, .svg, .jpg )
 
-# Code source React │ ├── public/
+2. **Backend**
 
-# Fichiers statiques (images, fonts, etc.) │ ├── package.json
+- `/backend` - Folder containing all the source code for the backend (Express.js)
+- `/backend/dist` - Production files for Express.js
 
-# Dépendances et scripts frontend │ └── ... ├── backend/
+## Setting up the Development Environment
 
-# Application backend Node.js/Express │ ├── src/
+1. **Clone the repository:**
 
-# Code source backend │ ├── models/
+   ```bash
+   git clone [repository URL]
+   cd innotech-exercices
+   ```
 
-# Modèles de base de données │ ├── controllers/
+2. Install Node.js and npm: Ensure you have Node.js and npm installed on your system. You can download them from https://nodejs.org/ .
 
-# Contrôleurs (logique métier) │ ├── package.json
+3. **Install dependencies:**
+   ```bash
+   cd frontend
+   npm install  # or yarn install
+   cd ../backend
+   npm install  # or yarn install
+   ```
 
-# Dépendances et scripts backend │ └── ... ├── docker-compose.yml
+## Running the Application
 
-# Fichier Docker Compose pour orchestrer les conteneurs ├── README.md
+1. **Start the Docker containers:**
 
-# Ce fichier └── .gitignore
+   ```bash
+   docker-compose up --build
+   ```
 
-# Fichiers ignorés par Git
+   This command will build and start the necessary Docker containers (database, backend, frontend). The --build flag ensures that the images are rebuilt if there are any changes to the Dockerfiles.
+
+1. **Access the application:**
+
+   Once the containers are running, you can access the application in your browser at http://localhost:3000 ( frontend ), http://localhost:4000 ( backend ).
+
+## Environments
+
+- Backend
+  ```bash
+  MONGODB=( url mongodb database )
+  ```
+
+## Version Control System - Basic Procedures (Using Git)
+
+This guide outlines the fundamental steps for using **Git**, the most widely adopted distributed version control system. Git helps developers track changes, collaborate on code, and manage project history efficiently.
+
+---
+
+### Version Control (Git)
+
+This project uses Git for version control. Here are some basic commands:
+
+- Clone the repository: (already covered above)
+- Create a new branch: `git checkout -b feature/your-feature-name`
+- Stage changes: `git add .`
+- Commit changes: `git commit -m "Your commit message"`
+- Push changes: `git push origin feature/feature-1`
+- Create a pull request: After pushing your branch, create a pull request on - GitHub to merge your changes into the main branch.
+
+## Dependencies
+
+- **Node.js:** v22.14.0
+- **npm:** v11.3.0
+- **Docker:** v28.0.4
+- **Docker Compose:** v2.34.0-desktop.1
+- **PostgreSQL:** (Used as the database - version managed by Docker)
+- **MongoDB:** (Used as the database - version managed by Docker)
+- **Frontend:**
+  - React: v19.0.0
+  - React DOM: v19.0.0
+  - Next.JS: v15.3.1
+  - TailwindCSS: v4
+  - EsLint: v9
+  - Typescript: v5
+- **Backend:**
+  - Express: v5.1.0
+  - Mongoose: v8.14.1
+  - Nodemon: v3.1.10
+  - Dotenv: v16.5.0
