@@ -29,7 +29,7 @@ The project is organized as follows:
 1. **Clone the repository:**
 
    ```bash
-   git clone [repository URL]
+   git clone https://github.com/pwenill/innotech-exercices.git
    cd innotech-exercices
    ```
 
