@@ -20,9 +20,25 @@ cd ..
 
 echo -e "${GREEN}✅ Dependency installation complete.${NC}"
 
-if [ ! -f .env ]; then
-    echo -e "${RED}❌ Missing .env file. Please check the documentation.${NC}"
+if [ ! -f backend/.env ]; then
+    echo -e "${RED}⚠️  backend .env file not found. Creating one...${NC}"
+    cat <<EOL > backend/.env
+MONGODB=( url mongodb )
+EOL
+    echo -e "${GREEN}✅ backend .env file created with default content.${NC}"
     exit 1
+fi
+
+if [ ! -f .env ]; then
+    echo -e "${RED}⚠️ .env file not found. Creating one...${NC}"
+    cat <<EOL > .env
+POSTGRES_USER=user
+POSTGRES_PASSWORD=password
+POSTGRES_DB=database
+
+MONGO_INITDB_DATABASE=mongodb
+EOL
+    echo -e "${GREEN}✅ .env file created with default content.${NC}"
 fi
 
 echo -e "${GREEN}Starting the applications${NC}"
